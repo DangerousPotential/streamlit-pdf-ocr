@@ -10,7 +10,8 @@ def add_annotation_to_pdf(pdf_path, annotations):
     page = doc.load_page(page_num)
     rect = fitz.Rect(50, 50, 550, 800)
     page.add_freetext_annot(rect, text, fontsize = 12)
-  doc.save("annoated_"+ os.path.basename(pdf_path))
+  finished_pdf = doc.save("annoated_"+ os.path.basename(pdf_path))
+  return finished_pdf
 
 # Perform OCR on a single image
 def ocr_image(image_path):

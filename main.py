@@ -15,4 +15,5 @@ if uploaded_pdf is not None:
 
     # Process the File
     annotate_pdf_with_ocr(temp_pdf_path)
-    st.success(f"Annotated PDF saved as annotated_{uploaded_pdf.name}")
+    st.download_button("Annotated PDF: ", data = annotate_pdf_with_ocr(temp_pdf_path))
+    st.success(f"Annotated PDF availiable to download!")
